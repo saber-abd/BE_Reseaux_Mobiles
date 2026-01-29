@@ -5,7 +5,7 @@ Interface web interactive présentant l'analyse de faisabilité d'un système pr
 ## Lancement
 
 ```powershell
-start test.html
+python -m http.server 8000
 ```
 
-Ou double-cliquez simplement sur `test.html`.
+Ouvrir http://localhost:8000 dans le navigateur.

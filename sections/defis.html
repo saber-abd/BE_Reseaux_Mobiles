@@ -1,0 +1,115 @@
+<section id="defis" class="tab-content">
+    <h2><i class="fas fa-shield-alt"></i> Obstacles Critiques : Véracité & RGPD</h2>
+    <p class="section-intro">
+        Le déploiement se heurte à <strong>deux obstacles majeurs</strong> : la véracité des données (technique) et la confidentialité (juridique). Ces défis ne sont pas insurmontables mais <strong>critiques</strong>.
+    </p>
+    <div class="challenge-grid">
+        
+        <div class="challenge-card warning" data-aos="flip-left">
+            <h3><i class="fas fa-exclamation-circle"></i> Limite 1 (Technique) : Véracité des Données</h3>
+            <p style="margin-top: 1rem; color: var(--text-light);">
+                L'OSINT, en particulier les réseaux sociaux, est <strong>massivement "bruitée"</strong> et constitue le principal vecteur de désinformation (bots, fake news, rumeurs).
+            </p>
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Problématique :</p>
+            <p style="color: var(--text-light);">Un modèle IA naïf pourrait sur-allouer des ressources pour un "flash mob" fictif ou manquer un événement réel masqué par le bruit.</p>
+            
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Solution (IA Multi-étages) :</p>
+            <ol style="color: var(--text-light); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
+                <li><strong>IA de Détection (NLP) :</strong> Scanne et identifie événements potentiels</li>
+                <li><strong>IA de Corrélation :</strong> Recherche confirmations (presse, agendas, comptes vérifiés)</li>
+                <li><strong>IA d'Analyse Sentiment :</strong> Prédit l'escalade, distingue mème viral vs mouvement réel</li>
+                <li><strong>IA de Détection Fraude :</strong> Deepfakes, identités synthétiques</li>
+            </ol>
+            <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 10px; margin-top: 1rem;">
+                <p style="color: var(--text-dark); font-size: 0.9rem;">
+                    🎯 <strong>Système de confiance :</strong> INSEE = 1.0, Tweet anonyme = 0.1 (jusqu'à corroboration)
+                </p>
+            </div>
+        </div>
+
+        <div class="challenge-card danger" data-aos="flip-right">
+            <h3><i class="fas fa-user-shield"></i> Limite 2 (Juridique) : RGPD & Confidentialité</h3>
+            <p style="margin-top: 1rem; color: var(--text-light);">
+                <strong>"Show-stopper" potentiel.</strong> L'analyse de posts publics sur réseaux sociaux constitue un traitement de données à caractère personnel et tombe sous le coup du RGPD.
+            </p>
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Fausse Piste :</p>
+            <p style="color: var(--text-light);">Le consentement explicite (Art. 6.1(a)) de millions d'utilisateurs est <strong>opérationnellement impossible</strong>.</p>
+            
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Seule Voie Viable :</p>
+            <p style="color: var(--text-light);"><strong>Intérêt Légitime (Art. 6.1(f))</strong> : Optimiser le réseau pour garantir QoS et efficacité énergétique (bénéfice client).</p>
+            
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Solution (Privacy-by-Design) :</p>
+            <ul style="color: var(--text-light); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
+                <li><strong>Anonymisation totale et irréversible</strong> (pas de pseudonymisation)</li>
+                <li><strong>3 Critères CNIL/G29 :</strong>
+                    <ul style="margin-left: 1rem; margin-top: 0.5rem;">
+                        <li>✓ Non-individualisation (impossible d'isoler un individu)</li>
+                        <li>✓ Non-corrélation (impossible de relier des datasets)</li>
+                        <li>✓ Non-inférence (impossible de déduire de nouvelles infos)</li>
+                    </ul>
+                </li>
+                <li><strong>Architecture :</strong> IA ingère en mémoire volatile, extrait signal agrégé, détruit immédiatement la source</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <h3 style="margin-top: 3rem; color: white; text-align: center;"><i class="fas fa-gavel"></i> Matrice de Conformité RGPD</h3>
+    <div style="overflow-x: auto; margin-top: 2rem; background: white; border-radius: 15px; padding: 2rem; box-shadow: var(--shadow-lg);" data-aos="fade-up">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+            <thead>
+                <tr style="background: linear-gradient(135deg, var(--secondary-color), #be185d); color: white;">
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Source OSINT</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Donnée Personnelle?</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Base Légale</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Risque RGPD</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Mitigation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(34, 197, 94, 0.05);">
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">INSEE</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Non (Données agrégées)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">N/A (Hors-champ)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: green; font-weight: 600;">Très Faible</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Utilisation directe</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">ANFR</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Non (Infrastructure)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">N/A</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: green; font-weight: 600;">Nul</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Utilisation directe</td>
+                </tr>
+                <tr style="background: rgba(34, 197, 94, 0.05);">
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">OpenStreetMap</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Non (Géospatiales)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">N/A</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: green; font-weight: 600;">Nul</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Utilisation directe</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Météo</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Non (Environnementales)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">N/A</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: green; font-weight: 600;">Nul</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Utilisation directe</td>
+                </tr>
+                <tr style="background: rgba(34, 197, 94, 0.05);">
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Agendas Publics</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Non (Événements)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">N/A</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: green; font-weight: 600;">Très Faible</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Utilisation directe</td>
+                </tr>
+                <tr style="background: rgba(239, 68, 68, 0.1);">
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Réseaux Sociaux</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">OUI, Absolument (Pseudo, opinions, localisation)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Intérêt Légitime (6.1f)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: red; font-weight: 600;">Extrêmement Élevé</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-size: 0.8rem;">Privacy-by-Design : Analyse à la volée, extraction signaux agrégés uniquement, respect 3 critères CNIL</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

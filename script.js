@@ -1,29 +1,68 @@
 // Initialize AOS (Animate On Scroll) when page loads
 document.addEventListener('DOMContentLoaded', () => {
+    loadSection('accueil'); // Load first section by default
     initializeTabs();
-    initializeChart();
     initializeScrollAnimations();
     initializeParticles();
 });
 
+// Load section from external file
+async function loadSection(sectionId) {
+    const mainContent = document.getElementById('main-content');
+    
+    try {
+        const response = await fetch(`./sections/${sectionId}.html`);
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        
+        const html = await response.text();
+        mainContent.innerHTML = html;
+        
+        // Add active class to the loaded section
+        const section = mainContent.querySelector('.tab-content');
+        if (section) {
+            section.classList.add('active');
+        }
+        
+        // Re-initialize animations and scroll effects
+        setTimeout(() => {
+            // Re-initialize AOS for newly loaded content
+            if (typeof AOS !== 'undefined') {
+                AOS.refreshHard();
+            }
+            
+            // Re-initialize scroll animations
+            initializeScrollAnimations();
+            
+            // Initialize chart if we're on the benefices section
+            if (sectionId === 'benefices') {
+                initializeChart();
+            }
+        }, 50);
+        
+    } catch (error) {
+        console.error('Error loading section:', error);
+        mainContent.innerHTML = '<p style="color: white; text-align: center;">Erreur lors du chargement de la section.</p>';
+    }
+}
+
 // Tab navigation system
 function initializeTabs() {
     const tabLinks = document.querySelectorAll('.tab-link');
-    const tabContents = document.querySelectorAll('.tab-content');
 
     tabLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
+        link.addEventListener('click', async (e) => {
             e.preventDefault();
             
             const tabId = link.getAttribute('data-tab');
 
-            // Remove active class from all tabs and contents
+            // Remove active class from all tabs
             tabLinks.forEach(item => item.classList.remove('active'));
-            tabContents.forEach(item => item.classList.remove('active'));
 
-            // Add active class to clicked tab and corresponding content
+            // Add active class to clicked tab
             link.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
+
+            // Load the section
+            await loadSection(tabId);
 
             // Scroll to top of content smoothly
             window.scrollTo({
@@ -187,9 +226,9 @@ function initializeScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe all cards
+    // Observe all cards - force them to be visible immediately
     document.querySelectorAll('.card, .benefit-card, .challenge-card, .implementation-card, .diagram-box').forEach(el => {
-        el.classList.add('fade-in');
+        el.classList.add('fade-in', 'visible');
         observer.observe(el);
     });
 }

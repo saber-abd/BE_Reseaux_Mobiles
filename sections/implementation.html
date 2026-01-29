@@ -1,0 +1,141 @@
+<section id="implementation" class="tab-content">
+    <h2><i class="fas fa-rocket"></i> Architecture & Plan de Déploiement Pragmatique</h2>
+    <p class="section-intro">
+        La faisabilité repose sur une <strong>architecture bi-modale (Cloud + Edge)</strong> et un déploiement progressif en 5 phases testables. L'approche n'est pas hypothétique : les composants existent, l'enjeu est la <strong>mise en cohérence</strong>.
+    </p>
+
+    <h3 style="margin-top: 2rem; color: white;"><i class="fas fa-network-wired"></i> Architecture Système (Bi-Modale)</h3>
+    <div style="background: white; border-radius: 15px; padding: 2rem; margin-top: 2rem; box-shadow: var(--shadow-lg);" data-aos="fade-up">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div>
+                <h4 style="color: var(--primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-cloud"></i> Layer 1 : Cloud HPC</h4>
+                <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 0.5rem;">Rôle : Entraînement & Modèles Complexes</p>
+                <ul style="color: var(--text-light); line-height: 1.8; margin-left: 1.5rem;">
+                    <li>Entraînement GNN (T-GCN, GMAN) sur historique 6 mois</li>
+                    <li>Modèles Foundation (GenAI) fine-tunés</li>
+                    <li>Agrégation nationale des données OSINT</li>
+                </ul>
+                <div style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1)); padding: 1rem; border-radius: 10px; margin-top: 1rem;">
+                    <p style="color: var(--text-dark); font-size: 0.9rem;"><strong>Stack :</strong> AWS SageMaker, TensorFlow Distributed, PyTorch Lightning</p>
+                </div>
+            </div>
+            <div>
+                <h4 style="color: var(--secondary-color); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-microchip"></i> Layer 2 : Edge Computing (MEC)</h4>
+                <p style="color: var(--text-dark); font-weight: 600; margin-bottom: 0.5rem;">Rôle : Inférence Temps Réel</p>
+                <ul style="color: var(--text-light); line-height: 1.8; margin-left: 1.5rem;">
+                    <li>Modèles légers déployés sur <strong>MEC (Multi-Access Edge Computing)</strong></li>
+                    <li>Latence < 10ms pour décisions critiques</li>
+                    <li>Traitement local des flux OSINT pour privacy</li>
+                </ul>
+                <div style="background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(219, 39, 119, 0.1)); padding: 1rem; border-radius: 10px; margin-top: 1rem;">
+                    <p style="color: var(--text-dark); font-size: 0.9rem;"><strong>Stack :</strong> ONNX Runtime, TensorFlow Lite, Kubernetes@Edge</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 3rem; color: white;"><i class="fas fa-plug"></i> Intégration O-RAN / RIC</h3>
+    <p class="section-intro">
+        L'interface standard pour le contrôle dynamique du RAN est <strong>O-RAN (Open Radio Access Network)</strong> avec son composant <strong>RIC (RAN Intelligent Controller)</strong>. Le système IA-OSINT devient une <strong>xApp O-RAN</strong> qui s'exécute sur le Near-RT RIC.
+    </p>
+    <div class="highlight-box" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));">
+        <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-code"></i> xApp "OSINT-Predictor"</h4>
+        <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.9;">
+            <li>📡 <strong>Input :</strong> Signaux de contrôle RAN (E2 Interface) + prédictions IA</li>
+            <li>⚙️ <strong>Output :</strong> Commandes SON (Self-Organizing Network) : beamforming, carrier aggregation, slice activation</li>
+            <li>🔄 <strong>Feedback Loop :</strong> Métriques KPI réseau réinjectées dans le modèle IA</li>
+        </ul>
+    </div>
+
+    <h3 style="margin-top: 3rem; color: white; text-align: center;"><i class="fas fa-map-marked-alt"></i> Feuille de Route de Déploiement (5 Phases)</h3>
+    <div style="overflow-x: auto; margin-top: 2rem; background: white; border-radius: 15px; padding: 2rem; box-shadow: var(--shadow-lg);" data-aos="fade-up">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+            <thead>
+                <tr style="background: linear-gradient(135deg, var(--primary-color), #8b5cf6); color: white;">
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Phase</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Objectif</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Sources OSINT</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Modèle IA</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Infrastructure</th>
+                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Critère de Succès</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background: rgba(34, 197, 94, 0.05);">
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Phase 1 : Preuve de Concept (PoC)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Valider corrélation OSINT ↔ Trafic sur 1 zone pilote</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Météo, Agendas Publics, OpenStreetMap</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Random Forest (baseline simple)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Jupyter Notebook local + historique 3 mois d'une BTS</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">R² > 0.7 sur corrélation événement/trafic</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Phase 2 : Prédiction Temporelle</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Prédire charge à J+1 sur 10 BTS</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">+ INSEE (densité population)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">LSTM (séries temporelles)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">AWS SageMaker (Cloud) + Kafka (streaming)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">MAPE < 15% sur prédiction J+1</td>
+                </tr>
+                <tr style="background: rgba(34, 197, 94, 0.05);">
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Phase 3 : Modélisation Spatiale</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Intégrer dimension spatiale (graphe d'antennes)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">+ ANFR (topologie réseau)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">T-GCN (Graph Neural Network)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">+ GPU Training (A100) pour GNN</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Amélioration 10% vs LSTM sur zones denses</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Phase 4 : Réseaux Sociaux (Critique)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Intégrer signaux temps réel (événements imprévus)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">+ Twitter/X, Détection d'événements NLP</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">+ Fine-tuned LLM (détection fake news) + Sentiment Analysis</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">+ Privacy-by-Design Layer (anonymisation à la volée)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Détection 80% événements réels (precision > 0.9)</td>
+                </tr>
+                <tr style="background: rgba(34, 197, 94, 0.05);">
+                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Phase 5 : Production O-RAN</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Déploiement échelle nationale avec boucle fermée</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Tous (fusion complète)</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">xApp O-RAN + Modèles Ensemble</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">MEC déployé sur sites + Orchestration via Near-RT RIC</td>
+                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Amélioration QoS 25% + Réduction énergie 15% (sur zones pilotes)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 style="margin-top: 3rem; color: white;"><i class="fas fa-lightbulb"></i> Recommandations Stratégiques</h3>
+    <div style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1)); border-radius: 15px; padding: 2rem; margin-top: 2rem;" data-aos="fade-up">
+        <ol style="line-height: 2; margin-left: 1.5rem; font-size: 1rem;">
+            <li style="margin-bottom: 1.5rem;">
+                <strong style="color: white;">Démarrer par l'"OSINT Statique" :</strong> 
+                <span style="color: rgba(255,255,255,0.8);">Sources INSEE, Météo, OSM sont fiables et sans RGPD. Générer des "quick wins" avant de s'attaquer aux réseaux sociaux.</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <strong style="color: white;">Investir massivement dans la Validation IA :</strong> 
+                <span style="color: rgba(255,255,255,0.8);">Le système de confiance multi-étage n'est pas un "nice to have", c'est le différenciateur entre un PoC et un système de production.</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <strong style="color: white;">Privacy-by-Design dès la Phase 1 :</strong> 
+                <span style="color: rgba(255,255,255,0.8);">Concevoir l'architecture (edge + anonymisation) dès le début. Migrer vers un système privacy-compliant ultérieurement est quasi impossible.</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <strong style="color: white;">Approche "Feedback Loop" :</strong> 
+                <span style="color: rgba(255,255,255,0.8);">Utiliser les KPI réseau réels comme "ground truth" pour entraîner continuellement les modèles (apprentissage en ligne). Le modèle doit apprendre de ses erreurs.</span>
+            </li>
+            <li style="margin-bottom: 1.5rem;">
+                <strong style="color: white;">Partenariat Open-Source & Recherche :</strong> 
+                <span style="color: rgba(255,255,255,0.8);">Contribuer à O-RAN Alliance, collaborer avec universités (datasets, validation académique). L'ampleur du projet nécessite un écosystème, pas un développement isolé.</span>
+            </li>
+        </ol>
+    </div>
+
+    <div class="highlight-box" style="margin-top: 3rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.15));">
+        <h4 style="color: white; margin-bottom: 1rem; text-align: center;"><i class="fas fa-trophy"></i> Vision Finale : Le Réseau "Contextually-Aware"</h4>
+        <p style="line-height: 1.9; text-align: center; font-size: 1.05rem;">
+            L'objectif n'est pas seulement d'anticiper la <strong>demande</strong>, mais de comprendre le <strong>contexte</strong> : un concert n'est pas seulement "20 000 personnes", c'est "20 000 personnes qui vont filmer en 4K et uploader sur Instagram". Le réseau devient <strong>socialement intelligent</strong>.
+        </p>
+    </div>
+        
+</section>
