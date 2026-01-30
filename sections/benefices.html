@@ -26,9 +26,9 @@
         Cependant, grâce à l'utilisation de l'IA et de l'OSINT, la QoS et l'efficacité énergétique peuvent être optimisée afin que sur une longue période, l'un ne se retrouve pas influencer par l'autre.
     </p>
 
-    <div class="highlight-box" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1));">
+    <div class="highlight-box" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(59, 130, 246, 0.1)); padding: 1.5rem; border-radius: 12px;">
         <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> Exemple de cas :</h4>
-        <p style="line-height: 1.8;">
+        <p style="line-height: 1.8; color: white;">
             Le système prédit (via OSINT) un concert dans la Zone A et confirme la fermeture des bureaux dans la Zone B. Il peut alors simultanément :
         </p>
         <ul style="margin-left: 2rem; margin-top: 1rem; line-height: 1.9; color: white;">
@@ -42,4 +42,32 @@
     <div class="chart-container" data-aos="fade-up">
         <canvas id="benefitsChart"></canvas>
     </div>
-</section> 
+
+    <div style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+        <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.2rem;"><i class="fas fa-book"></i> Glossaire Technique</h4>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">QoS vs QoE</strong>
+                <span style="font-size: 0.85rem; color: #ccc;"><strong>QoS (Quality of Service)</strong> mesure la performance technique (débit, latence). <strong>QoE (Quality of Experience)</strong> mesure la satisfaction réelle de l'utilisateur (ex: fluidité vidéo).</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">RAN (Radio Access Network)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Partie radio du réseau (antennes). C'est le poste de dépense énergétique le plus lourd (environ 80%).</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">OPEX (Operational Expenditure)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Dépenses d'exploitation courantes (énergie, maintenance, loyers), par opposition à l'investissement matériel (CAPEX).</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">Best-Effort</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Modèle où le réseau fait "de son mieux" pour transmettre les données sans garantie de performance, contrairement à la QoS garantie.</span>
+            </div>
+
+        </div>
+    </div>
+</section>
