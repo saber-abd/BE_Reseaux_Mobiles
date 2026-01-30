@@ -5,7 +5,7 @@
     </p>
 
     <h3 style="margin-top: 2rem; color: white;"><i class="fas fa-network-wired"></i> Architecture Système Bi-Modale (Cloud + Edge)</h3>
-    <p style="line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem;">
+    <p style="line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.95);">
         Cette architecture divise le traitement des données en deux couches distinctes pour optimiser à la fois la puissance de calcul et la réactivité du réseau.
     </p>
     <div style="background: white; border-radius: 15px; padding: 2rem; margin-top: 2rem; box-shadow: var(--shadow-lg);" data-aos="fade-up">
@@ -38,7 +38,7 @@
     </div>
 
     <h3 style="margin-top: 3rem; color: white;"><i class="fas fa-plug"></i> Intégration O-RAN / RIC</h3>
-    <p style="line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem;">
+    <p style="line-height: 1.8; font-size: 0.95rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.95);">
         L'architecture s'appuie sur le standard <strong>O-RAN (Open Radio Access Network)</strong>, qui définit une interface ouverte pour le contrôle intelligent du réseau radio. Le composant central est le <strong>RIC (RAN Intelligent Controller)</strong>.
     </p>
     <div class="highlight-box" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));">
@@ -57,7 +57,7 @@
     </div>
 
     <h3 style="margin-top: 3rem; color: white; text-align: center;"><i class="fas fa-map-marked-alt"></i> Feuille de Route de Déploiement (5 Phases)</h3>
-    <p style="text-align: center; margin-bottom: 2rem; color: rgba(255,255,255,0.8);">Le déploiement est structuré en cinq phases successives pour minimiser les risques et valider les gains de performance à chaque étape.</p>
+    <p style="text-align: center; margin-bottom: 2rem; color: rgba(255,255,255,0.95);">Le déploiement est structuré en cinq phases successives pour minimiser les risques et valider les gains de performance à chaque étape.</p>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
         <!-- Phase 1 -->
@@ -66,13 +66,13 @@
                 <span style="background: #22c55e; color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">1</span>
                 <h4 style="color: white; margin: 0; font-size: 1.1rem;">Preuve de Concept (PoC)</h4>
             </div>
-            <p style="color: rgba(255,255,255,0.85); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Valider la corrélation entre les données OSINT et le trafic réseau sur une zone pilote restreinte.</p>
-            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+            <p style="color: rgba(255,255,255,0.95); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Valider la corrélation entre les données OSINT et le trafic réseau sur une zone pilote restreinte.</p>
+            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.9); font-size: 0.9rem;">
                 <li><strong>Durée :</strong> 1-2 mois</li>
                 <li><strong>Sources OSINT :</strong> Météo, Agendas Publics, OpenStreetMap</li>
                 <li><strong>Modèle IA :</strong> Random Forest (baseline référence)</li>
                 <li><strong>Infrastructure :</strong> Jupyter local + 3 mois d'historique d'une BTS</li>
-                <li style="margin-top: 0.5rem;"><strong style="color: #86efac;">Succès :</strong> R² > 0,7<br/><span style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ Le modèle explique 70% de la variance du trafic. Au-delà, une corrélation significative est établie et le modèle capture les événements externes majeurs (météo, jours festifs, etc.).</span></li>
+                <li style="margin-top: 0.5rem;"><strong style="color: #86efac;">Succès :</strong> R² > 0,7<br/><span style="color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ Le modèle explique 70% de la variance du trafic. Au-delà, une corrélation significative est établie et le modèle capture les événements externes majeurs (météo, jours festifs, etc.).</span></li>
             </ul>
         </div>
 
@@ -82,13 +82,13 @@
                 <span style="background: #3b82f6; color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">2</span>
                 <h4 style="color: white; margin: 0; font-size: 1.1rem;">Prédiction Temporelle</h4>
             </div>
-            <p style="color: rgba(255,255,255,0.85); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Prédire la charge réseau à J+1 sur un ensemble de 10 stations de base.</p>
-            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+            <p style="color: rgba(255,255,255,0.95); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Prédire la charge réseau à J+1 sur un ensemble de 10 stations de base.</p>
+            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.9); font-size: 0.9rem;">
                 <li><strong>Durée :</strong> 2-3 mois</li>
                 <li><strong>Sources OSINT :</strong> Ajout INSEE (densité population)</li>
                 <li><strong>Modèle IA :</strong> Long Short Term Memory (réseaux récurrents temporels)</li>
                 <li><strong>Infrastructure :</strong> AWS SageMaker + Kafka (streaming)</li>
-                <li style="margin-top: 0.5rem;"><strong style="color: #93c5fd;">Succès :</strong> MAPE < 15%<br/><span style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ L'erreur moyenne absolue en pourcentage doit rester < 15% pour valider que les prédictions J+1 sont opérationnelles. À 15%, le système peut pré-allouer la bande passante avec confiance.</span></li>
+                <li style="margin-top: 0.5rem;"><strong style="color: #93c5fd;">Succès :</strong> MAPE < 15%<br/><span style="color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ L'erreur moyenne absolue en pourcentage doit rester < 15% pour valider que les prédictions J+1 sont opérationnelles. À 15%, le système peut pré-allouer la bande passante avec confiance.</span></li>
             </ul>
         </div>
 
@@ -98,13 +98,13 @@
                 <span style="background: #a855f7; color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">3</span>
                 <h4 style="color: white; margin: 0; font-size: 1.1rem;">Modélisation Spatiale</h4>
             </div>
-            <p style="color: rgba(255,255,255,0.85); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Intégrer la dimension géographique et la topologie du réseau (graphe d'antennes).</p>
-            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+            <p style="color: rgba(255,255,255,0.95); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Intégrer la dimension géographique et la topologie du réseau (graphe d'antennes).</p>
+            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.9); font-size: 0.9rem;">
                 <li><strong>Durée :</strong> 3-4 mois</li>
                 <li><strong>Sources OSINT :</strong> + ANFR (topologie et emplacement)</li>
                 <li><strong>Modèle IA :</strong> T-GCN (Graph Convolutional Network temporel)</li>
                 <li><strong>Infrastructure :</strong> GPU haute performance (A100) pour GNN</li>
-                <li style="margin-top: 0.5rem;"><strong style="color: #d8b4fe;">Succès :</strong> +10% de précision<br/><span style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ La modélisation spatiale doit démontrer un gain par rapport au Long Short Term Memory simple (typiquement 80-82% → 90%+). Ce gain prouve que la topologie réseau (graphe d'antennes) enrichit les prédictions.</span></li>
+                <li style="margin-top: 0.5rem;"><strong style="color: #d8b4fe;">Succès :</strong> +10% de précision<br/><span style="color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ La modélisation spatiale doit démontrer un gain par rapport au Long Short Term Memory simple (typiquement 80-82% → 90%+). Ce gain prouve que la topologie réseau (graphe d'antennes) enrichit les prédictions.</span></li>
             </ul>
         </div>
 
@@ -114,13 +114,13 @@
                 <span style="background: #ec4899; color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">4</span>
                 <h4 style="color: white; margin: 0; font-size: 1.1rem;">Réseaux Sociaux (Critique)</h4>
             </div>
-            <p style="color: rgba(255,255,255,0.85); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Intégrer les signaux temps réel pour détecter les événements imprévus (flash mobs, incidents).</p>
-            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+            <p style="color: rgba(255,255,255,0.95); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Intégrer les signaux temps réel pour détecter les événements imprévus (flash mobs, incidents).</p>
+            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.9); font-size: 0.9rem;">
                 <li><strong>Durée :</strong> 4-5 mois</li>
                 <li><strong>Sources OSINT :</strong> Twitter/X (API), détection NLP</li>
                 <li><strong>Modèle IA :</strong> LLM fine-tuné (sentiment + fake news)</li>
                 <li><strong>Infrastructure :</strong> + Privacy-by-Design Layer</li>
-                <li style="margin-top: 0.5rem;"><strong style="color: #f472b6;">Succès :</strong> Recall ≥ 80% | Precision > 0,9<br/><span style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ Le système doit capturer 80% des vrais événements impactants (concerts, accidents, etc.) avec une forte précision (< 10% de faux positifs). Essentiellement : si l'API détecte un événement, c'est pertinent à 90%.</span></li>
+                <li style="margin-top: 0.5rem;"><strong style="color: #f472b6;">Succès :</strong> Recall ≥ 80% | Precision > 0,9<br/><span style="color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ Le système doit capturer 80% des vrais événements impactants (concerts, accidents, etc.) avec une forte précision (< 10% de faux positifs). Essentiellement : si l'API détecte un événement, c'est pertinent à 90%.</span></li>
             </ul>
         </div>
 
@@ -130,19 +130,19 @@
                 <span style="background: #fb923c; color: white; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">5</span>
                 <h4 style="color: white; margin: 0; font-size: 1.1rem;">Production O-RAN</h4>
             </div>
-            <p style="color: rgba(255,255,255,0.85); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Déploiement à l'échelle nationale avec une boucle de contrôle entièrement automatisée.</p>
-            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.8); font-size: 0.9rem;">
+            <p style="color: rgba(255,255,255,0.95); margin: 0.5rem 0 1rem; font-size: 0.9rem;"><strong>Objectif :</strong> Déploiement à l'échelle nationale avec une boucle de contrôle entièrement automatisée.</p>
+            <ul style="margin: 0; padding-left: 1rem; color: rgba(255,255,255,0.9); font-size: 0.9rem;">
                 <li><strong>Durée :</strong> 6+ mois</li>
                 <li><strong>Sources OSINT :</strong> Fusion complète de toutes les sources</li>
                 <li><strong>Modèle IA :</strong> xApp O-RAN + Ensemble de modèles</li>
                 <li><strong>Infrastructure :</strong> MEC déployé + Orchestration Near-RT RIC</li>
-                <li style="margin-top: 0.5rem;"><strong style="color: #fdba74;">Succès :</strong> QoS +25% | Énergie -15%<br/><span style="color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ Les bénéfices mesurables de la boucle fermée O-RAN : meilleure qualité de service (throughput, latence) et réduction des ressources consommées. Au-delà de ces seuils, le ROI de la solution est justifié auprès des décideurs.</span></li>
+                <li style="margin-top: 0.5rem;"><strong style="color: #fdba74;">Succès :</strong> QoS +25% | Énergie -15%<br/><span style="color: rgba(255,255,255,0.85); font-size: 0.85rem; font-weight: 400; margin-left: 2rem; display: inline-block; margin-top: 0.25rem;">→ Les bénéfices mesurables de la boucle fermée O-RAN : meilleure qualité de service (throughput, latence) et réduction des ressources consommées. Au-delà de ces seuils, le ROI de la solution est justifié auprès des décideurs.</span></li>
             </ul>
         </div>
     </div>
 
     <h3 style="margin-top: 3rem; color: white;"><i class="fas fa-lightbulb"></i> Recommandations Stratégiques</h3>
-    <p style="line-height: 1.8; font-size: 0.95rem; margin-bottom: 2rem;">Ces cinq principes directeurs sont essentiels pour transformer un projet théorique en système de production robuste et conforme.</p>
+    <p style="line-height: 1.8; font-size: 0.95rem; margin-bottom: 2rem; color: rgba(255,255,255,0.95);">Ces cinq principes directeurs sont essentiels pour transformer un projet théorique en système de production robuste et conforme.</p>
     
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
         <!-- Recommandation 1 -->
@@ -194,6 +194,74 @@
     <div class="highlight-box" style="margin-top: 3rem; background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2)); border-radius: 15px; padding: 2.5rem; text-align: center; border-left: 5px solid var(--primary-color);">
         <h4 style="color: white; margin-bottom: 1.5rem; text-align: center; font-size: 1.4rem;"><i class="fas fa-trophy" style="margin-right: 0.5rem;"></i> Vision Finale : un réseau qui prend en compte le contexte</h4>
         <p style="line-height: 2; font-size: 1.1rem; color: rgba(255,255,255,0.95); margin: 0;">L'ambition ultime dépasse la simple anticipation de la demande volumétrique. Il s'agit de comprendre le <strong>contexte sémantique</strong> de cette demande. Pour le réseau, un concert ne se résume pas à <strong>"20 000 personnes connectées"</strong>, mais se traduit par <strong>"20 000 utilisateurs susceptibles de diffuser des flux vidéo 4K simultanés vers Instagram"</strong>. En intégrant cette nuance, le réseau devient véritablement <strong>socialement intelligent</strong>.</p>
+    </div>
+
+    <div style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+        <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.2rem;"><i class="fas fa-book"></i> Glossaire Technique</h4>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">O-RAN (Open Radio Access Network)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Architecture standardisée ouverte pour les réseaux radio mobiles, permettant l'interopérabilité entre équipements de différents fournisseurs.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">RIC (RAN Intelligent Controller)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Contrôleur intelligent du réseau radio qui héberge des applications d'IA (xApps) pour optimiser dynamiquement les performances du réseau.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">MEC (Multi-access Edge Computing)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Architecture plaçant le calcul et le stockage à la périphérie du réseau (proche des antennes) pour réduire la latence à moins de 10ms.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">xApp (Extension Application)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Application micro-service s'exécutant sur le RIC pour implémenter des fonctions d'optimisation spécifiques (ici : prédiction OSINT).</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">SON (Self-Organizing Network)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Ensemble de mécanismes permettant au réseau de s'auto-configurer, s'auto-optimiser et s'auto-réparer sans intervention humaine.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">T-GCN (Temporal Graph Convolutional Network)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Architecture d'IA combinant réseaux de neurones graphiques et LSTM pour prédire le trafic sur un graphe réseau dans le temps.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">LSTM (Long Short-Term Memory)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Type de réseau de neurones récurrent capable de capturer les dépendances temporelles longues dans les séries chronologiques.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">MAPE (Mean Absolute Percentage Error)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Métrique de performance mesurant l'erreur moyenne absolue en pourcentage entre prédictions et valeurs réelles. Seuil opérationnel : < 15%.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">Network Slice</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Partition virtuelle d'un réseau physique dédiée à un usage spécifique (vidéo 4K, IoT, ultra-low latency) avec QoS garantie.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">Beamforming</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Technique de transmission radio directionnelle concentrant le signal vers des utilisateurs spécifiques plutôt que de diffuser dans toutes les directions.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">HPC (High Performance Computing)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Infrastructure de calcul haute performance (supercalculateurs, clusters GPU) utilisée pour l'entraînement des modèles d'IA complexes.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">Privacy-by-Design</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Approche intégrant la protection de la vie privée dès la conception du système, plutôt que comme une adaptation ultérieure.</span>
+            </div>
+
+        </div>
     </div>
         
 </section>
