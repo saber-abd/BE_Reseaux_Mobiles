@@ -1,32 +1,39 @@
 <section id="role-ia" class="tab-content">
     <h2><i class="fas fa-microchip"></i> Rôle de l'Intelligence Artificielle : Les 4 Phases</h2>
     <p class="section-intro">
-        L'IA ne collecte pas seulement les données, c'est le moteur central qui gère une chaîne de traitement en quatre phases distinctes, qui transformant des données brutes en actions réseau concrètes.
+        L'IA ne collecte pas seulement les données, c'est le moteur central qui gère une chaîne de traitement en quatre phases distinctes, transformant des données brutes en actions réseau concrètes.
     </p>
-    <div class="diagram-container" data-aos="fade-up">
+
+    <div class="diagram-container" data-aos="fade-up" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
         
+        <div class="diagram-box" style="flex: 1; min-width: 200px;">
+            <h3>1. Collecte</h3>
+            <span style="font-size: 0.8rem; color: var(--secondary-color); font-weight: bold;">Ingestion</span>
+            <p class="mt-2 text-sm">Sources hétérogènes :<br>Météo, Réseaux Sociaux, INSEE, Topologie 3D.</p>
+        </div>
+
+        <div class="diagram-arrow">➡️</div>
+
         <div class="diagram-box">
-            <h3>1. Entrées (OSINT)</h3>
-            <p class="mt-2 text-sm">OpenCelliD, Météo, Réseaux Sociaux, OSM, INSEE, Agendas...</p>
+            <h3>2. Validation</h3>
+            <span style="font-size: 0.8rem; color: var(--secondary-color); font-weight: bold;">Extraction NLP</span>
+            <p class="mt-2 text-sm">Filtrage du "bruit" & Fake News.<br>Structuration : <em>Quoi, Où, Quand ?</em></p>
         </div>
 
         <div class="diagram-arrow">➡️</div>
 
         <div class="diagram-box highlight">
-            <h3>2. Moteur IA</h3>
-            <ul style="margin-top: 1rem; text-align: left; font-size: 0.9rem; list-style: disc; padding-left: 1.5rem;">
-                <li>Analyse de sentiments</li>
-                <li>Détection d'événements</li>
-                <li>Corrélation spatio-temporelle</li>
-                <li>Modélisation prédictive</li>
-            </ul>
+            <h3>3. Fusion</h3>
+            <span style="font-size: 0.8rem; color: #fff; font-weight: bold;">Modélisation GNN</span>
+            <p class="mt-2 text-sm">Prédiction spatio-temporelle de la charge sur le graphe du réseau.</p>
         </div>
         
         <div class="diagram-arrow">➡️</div>
 
         <div class="diagram-box">
-            <h3>3. Sorties (Actions)</h3>
-            <p class="mt-2 text-sm">Prédictions de charge, optimisation QoS, allocation dynamique des ressources...</p>
+            <h3>4. Orchestration</h3>
+            <span style="font-size: 0.8rem; color: var(--secondary-color); font-weight: bold;">Action (RIC)</span>
+            <p class="mt-2 text-sm">Allocation de <em>Slices</em>, Beamforming, Sleep Mode via O-RAN.</p>
         </div>
 
     </div>
@@ -37,30 +44,56 @@
     </p>
     <div class="benefits-grid" style="margin-top: 2rem;">
         <div class="benefit-card" data-aos="zoom-in">
-            <h3>🔗 T-GCN</h3>
-            <p><strong>Temporal Graph Convolutional Network</strong> - Capture les dépendances spatiales (la congestion d'une cellule affecte ses voisines) et temporelles (schémas de trafic récurrents).</p>
+            <h3>T-GCN</h3>
+            <p><strong>Temporal Graph Convolutional Network</strong> : Architecture IA avancée qui capture les dépendances spatiales et temporelles.</p>
         </div>
         <div class="benefit-card" data-aos="zoom-in" data-aos-delay="100">
-            <h3>🎯 GMAN</h3>
-            <p><strong>Graph Multi-Attention Network</strong> - Modèle avancé pour la prédiction de trafic, initialement conçu pour le trafic routier, adapté aux réseaux mobiles.</p>
+            <h3>GMAN</h3>
+            <p><strong>Graph Multi-Attention Network</strong> : Modèle avancé pour prédire le trafic. Initialement conçu pour le trafic routier, il a été adapté aux réseaux mobiles.</p>
         </div>
         <div class="benefit-card" data-aos="zoom-in" data-aos-delay="200">
-            <h3>🌟 Projet Stardust (Orange)</h3>
-            <p>Preuve industrielle : Orange utilise des GNNs avec données géographiques pour modéliser la propagation radio de manière <strong>"ultra-précise et en temps réel"</strong>.</p>
+            <h3>Projet Stardust (Orange)</h3>
+            <p>Orange utilise des GNNs avec données géographiques pour modéliser la propagation radio de manière <strong>"ultra-précise en temps réel"</strong>.</p>
         </div>
     </div>
 
-    <h3 style="margin-top: 3rem; color: white;"><i class="fas fa-magic"></i> IA Générative & Modèles de Fondation</h3>
+    <h3 style="margin-top: 3rem; color: white;"><i class="fas fa-server"></i> Infrastructure Bi-Modale : Cloud vs Edge</h3>
+    <p class="section-intro">
+        L'architecture matérielle doit répondre à deux besoins contradictoires : la puissance de calcul pour apprendre et la rapidité pour agir.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+        
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 15px; border-top: 4px solid #f59e0b;" data-aos="fade-right">
+            <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-brain"></i> Entraînement (Cloud / HPC)</h4>
+            <ul style="list-style: none; padding: 0; color: #ccc; font-size: 0.9rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Où ?</strong> Datacenters centralisés ou Clusters HPC (NVIDIA DGX).</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Quoi ?</strong> Apprentissage lourd sur des pétaoctets de données historiques (Météo et Trafic passé).</li>
+                <li><strong>Objectif :</strong> Créer des "Modèles de Fondation" robustes.</li>
+            </ul>
+        </div>
+
+        <div style="background: rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 15px; border-top: 4px solid #10b981;" data-aos="fade-left">
+            <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-bolt"></i> Inférence (Edge / MEC)</h4>
+            <ul style="list-style: none; padding: 0; color: #ccc; font-size: 0.9rem;">
+                <li style="margin-bottom: 0.5rem;"><strong>Où ?</strong> En périphérie du réseau (MEC : Multi-access Edge Computing).</li>
+                <li style="margin-bottom: 0.5rem;"><strong>Quoi ?</strong> Exécution du modèle en temps réel (< 10ms).</li>
+                <li><strong>Objectif :</strong> Prise de décision immédiate près de l'antenne (via le RIC).</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 3rem; color: white;"><i class="fas fa-magic"></i> IA Générative et Modèles de Fondation</h3>
     <div class="card-grid" style="margin-top: 2rem;">
         <div class="card" data-aos="fade-up">
             <span class="card-icon">🏗️</span>
             <h3>Modèles de Fondation Spatio-Temporels</h3>
-            <p><strong>OpenCity</strong> : Modèles pré-entraînés sur volumes massifs permettant un déploiement en mode "zero-shot" ou "few-shot", réduisant drastiquement les coûts.</p>
+            <p><strong>OpenCity</strong> : Modèles pré-entraînés sur des volumes importants, permettant un déploiement en mode "zero-shot" ou "few-shot", réduisant drastiquement les coûts.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="100">
             <span class="card-icon">🎨</span>
             <h3>IA Générative (GenAI)</h3>
-            <p>Génère des solutions d'optimisation, synthétise des données manquantes, et alimente des <strong>Jumeaux Numériques (Digital Twins)</strong> pour tester les stratégies avant déploiement.</p>
+            <p>Génère des solutions d'optimisation, synthétise les données manquantes, et alimente des <strong>Jumeaux Numériques (Digital Twins)</strong> pour tester les stratégies avant déploiement.</p>
         </div>
         <div class="card" data-aos="fade-up" data-aos-delay="200">
             <span class="card-icon">🔮</span>
@@ -72,7 +105,46 @@
     <div class="highlight-box" style="margin-top: 3rem; background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(99, 102, 241, 0.1));">
         <h4 style="color: white; margin-bottom: 1rem;"><i class="fas fa-lightbulb"></i> Exemple Concret</h4>
         <p style="line-height: 1.8;">
-            L'IA corrèle une augmentation soudaine de posts sur un réseau social mentionnant un "concert surprise" (Source 1) dans un parc spécifique (Source 2) avec un agenda d'événement vide (Source 3) pour prédire un afflux de population non planifié. Elle recommande alors de réallouer dynamiquement les ressources réseau vers cette zone.
+            L'IA corrèle une augmentation soudaine de posts sur un réseau social mentionnant un "concert surprise" dans un parc spécifique avec un agenda d'événement vide pour prédire un afflux de population non planifié. Elle recommande alors de réallouer dynamiquement les ressources réseau vers cette zone.
         </p>
     </div>
+
+    <div style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+        <h4 style="color: white; margin-bottom: 1.5rem; font-size: 1.2rem;"><i class="fas fa-book"></i> Glossaire Technique</h4>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+            
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">NLP (Traitement du Langage Naturel)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Branche de l'IA permettant aux machines de comprendre et d'interpréter le langage humain (ex: tweets, articles).</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">GNN (Réseaux de Neurones Graphiques)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Type d'IA conçu pour traiter des données structurées en graphe (nœuds et connexions), idéal pour les réseaux télécoms.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">RIC (Radio Intelligent Controller)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Composant clé de l'architecture O-RAN qui permet d'exécuter des applications d'IA pour optimiser le réseau radio.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">MEC (Multi-access Edge Computing)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Architecture déplaçant le calcul et le stockage vers la périphérie du réseau (proche des antennes) pour réduire la latence.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">Zero-shot / Few-shot Learning</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Capacité d'un modèle d'IA à effectuer une tâche correctement sans avoir vu (ou très peu) d'exemples spécifiques lors de son entraînement.</span>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+                <strong style="color: var(--secondary-color); display: block; margin-bottom: 0.5rem;">HPC (High Performance Computing)</strong>
+                <span style="font-size: 0.85rem; color: #ccc;">Utilisation de supercalculateurs ou clusters puissants pour traiter des tâches massives, comme l'entraînement des modèles d'IA.</span>
+            </div>
+
+        </div>
+    </div>
+
 </section>
