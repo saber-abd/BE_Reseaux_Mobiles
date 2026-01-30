@@ -1,115 +1,144 @@
 <section id="sources" class="tab-content">
-    <h2><i class="fas fa-server"></i> Sources de Données (OSINT) : La Chaîne de Collecte</h2>
-    <p class="section-intro">
-        La force de ce concept repose sur la fusion de données hétérogènes. Le système ingère et normalise un large volume de données de sources variées, classées en quatre catégories principales :
-    </p>
+    <h2><i class="fas fa-network-wired"></i> Architecture de Données OSINT & Fusion Multi-Sources</h2>
     
-    <h3 style="margin-top: 2rem; color: white;"><i class="fas fa-layer-group"></i> Classification des Sources</h3>
+    <div style="background: linear-gradient(to right, rgba(255,255,255,0.05), transparent); padding: 1.5rem; border-left: 4px solid var(--primary-color); border-radius: 8px; margin-bottom: 2rem;">
+        <p class="section-intro" style="margin: 0;">
+            L'architecture dépasse les systèmes SON (Self-Organizing Networks) réactifs actuels en intégrant un moteur d'analyse prédictif. Le système ingère et normalise des flux hétérogènes pour alimenter des Réseaux de Neurones Graphiques (GNNs). L'objectif est de transformer des données non structurées (textes, images, météo) en directives d'orchestration réseau précises (allocation de Network Slices, gestion des faisceaux).
+        </p>
+    </div>
+
+    <h3 style="margin-top: 2rem; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+        <i class="fas fa-database"></i> 1. Données Structurelles (Le "Squelette" du Graphe)
+    </h3>
     <div class="card-grid">
-        
         <div class="card" data-aos="fade-up" data-aos-delay="0">
             <span class="card-icon">📡</span>
-            <h3><i class="fas fa-broadcast-tower"></i> OpenCelliD / ANFR</h3>
-            <p>Localisation et caractéristiques techniques des antennes-relais existantes.</p>
+            <h3>Infrastructure & Topologie (ANFR / OpenCelliD)</h3>
+            <p>
+                Données techniques définissant les nœuds du graphe : localisation précise (Lat/Lon), azimuts, et technologies (2G/3G/4G/5G). Ces données statiques sont importées via des bases comme l'ANFR pour construire la matrice d'adjacence du réseau.
+            </p>
         </div>
-
         <div class="card" data-aos="fade-up" data-aos-delay="100">
-            <span class="card-icon">🗺️</span>
-            <h3><i class="fas fa-map-marked-alt"></i> OpenStreetMap (OSM)</h3>
-            <p>Données géographiques, topologie des bâtiments, routes, et types de zones (commerciale, résidentielle).</p>
+            <span class="card-icon">🏙️</span>
+            <h3>Environnement 3D (OpenStreetMap / GeoAI)</h3>
+            <p>
+                Modélisation vectorielle de l'environnement de propagation. L'IA analyse la hauteur des bâtiments, le relief et la végétation pour prédire les effets de masquage et de "canyon urbain", essentiels pour le Beamforming 5G millimétrique.
+            </p>
         </div>
+    </div>
 
+    <h3 style="margin-top: 3rem; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+        <i class="fas fa-bolt"></i> 2. Données Dynamiques (Le "Flux" du Trafic)
+    </h3>
+    <div class="card-grid">
         <div class="card" data-aos="fade-up" data-aos-delay="200">
             <span class="card-icon">👥</span>
-            <h3><i class="fas fa-users"></i> Densité de Population</h3>
-            <p>Données statiques (INSEE) et dynamiques pour comprendre la répartition habituelle des utilisateurs.</p>
+            <h3>Démographie & Mobilité (INSEE)</h3>
+            <p>
+                Intégration des flux domicile-travail et de la densité de population jour/nuit. Ces données servent de "baseline" (niveau de base) pour l'optimisation énergétique à long terme, permettant d'activer les modes de veille (Sleep Mode) dans les zones d'activités vides le week-end.
+            </p>
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="300">
-            <span class="card-icon">📰</span>
-            <h3><i class="fab fa-twitter"></i> Réseaux Sociaux</h3>
-            <p>Détection d'événements, rassemblements, concerts, manifestations via l'analyse de posts publics.</p>
+            <span class="card-icon">📢</span>
+            <h3>Réseaux Sociaux & Événementiel (NLP)</h3>
+            <p>
+                Détection précoce d'événements (concerts, rassemblements) via l'analyse sémantique (NLP). L'IA extrait les données (Lieu, Date, Heure...) pour anticiper les pics de charge inhabituelles que les modèles classiques n'arrivent pas à prévoir.
+            </p>
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="400">
-            <span class="card-icon">🗓️</span>
-            <h3><i class="fas fa-calendar-alt"></i> Agendas d'Événements</h3>
-            <p>Informations sur les événements sportifs, culturels ou commerciaux planifiés à l'avance.</p>
+            <span class="card-icon">🌧️</span>
+            <h3>Météo de Précision & "Rain Fade"</h3>
+            <p>
+                Des modèles d'IA de fondation sont utilisés (ex: GraphCast, PanguWeather) pour prédire l'atténuation du signal (Rain Fade) sur les bandes Ku/Ka. C'est un élément crucial pour le reroutage préventif des backhauls satellites ou encore des faisceaux hertziens avant que le service se dégrade.
+            </p>
         </div>
 
         <div class="card" data-aos="fade-up" data-aos-delay="500">
-            <span class="card-icon">☁️</span>
-            <h3><i class="fas fa-cloud-sun"></i> Données Météo</h3>
-            <p>Impact sur la mobilité des personnes et sur la performance de certaines liaisons (ex: Starlink, faisceaux hertziens).</p>
+            <span class="card-icon">📱</span>
+            <h3>Données Internes & Crowdsourcing</h3>
+            <p>
+                Les KPIs réseaux historiques (Charge et QoS) et les données crowdsourcées (le projet Stardust) fusionnent. En effet, ces données servent à calibrer et entraîner les modèles en boucle fermée.
+            </p>
         </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="600">
-            <span class="card-icon">📊</span>
-            <h3><i class="fas fa-chart-bar"></i> Données Internes</h3>
-            <p>Anonymisées sur la charge réseau historique pour entraîner les modèles (ex: trafic par cellule).</p>
-        </div>
-
-        <div class="card" data-aos="fade-up" data-aos-delay="700">
-            <span class="card-icon">🛰️</span>
-            <h3><i class="fas fa-satellite"></i> Impact Starlink</h3>
-            <p>Analyse de la météo pour anticiper la qualité de service des réseaux non-terrestres (pluie, nuages).</p>
-        </div>
-
     </div>
 
-    <h3 style="margin-top: 3rem; color: white; text-align: center;"><i class="fas fa-table"></i> Architecture de Fusion : De la Donnée Brute à l'Action</h3>
-    <div style="overflow-x: auto; margin-top: 2rem; background: white; border-radius: 15px; padding: 2rem; box-shadow: var(--shadow-lg);" data-aos="fade-up">
-        <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
+    <div style="margin-top: 4rem; background: rgba(30, 30, 40, 0.8); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1);" data-aos="fade-up">
+        <h3 style="color: var(--secondary-color); margin-top: 0;"><i class="fas fa-shield-alt"></i> Phase Critique : Validation et "Privacy-by-Design"</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+            
+            <div>
+                <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">🛡️ Filtrage de la Désinformation (Anti-Bruit)</h4>
+                <p style="font-size: 0.9rem; color: #ccc; line-height: 1.6;">
+                    Il y a beaucoup de "déchets" dans les données OSINT, ce qu'on appelle du "bruit". Pour éviter des allocations de ressources basées sur des fausses données, le système utilise une validation multi-étages :
+                </p>
+                <ul style="font-size: 0.9rem; color: #ccc; margin-left: 1rem; margin-top: 0.5rem;">
+                    <li><strong>Détection :</strong> 1ère identification par NLP.</li>
+                    <li><strong>Corrélation :</strong> Croisement automatique avec agences de presse ou agendas officiels pour vérification.</li>
+                    <li><strong>Analyse de Sentiment :</strong> Verification que les tendances sont des produits humains et non artificiels.</li>
+                </ul>
+            </div>
+
+            <div style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 2rem;">
+                <h4 style="color: white; font-size: 1.1rem; margin-bottom: 1rem;">🔒 Conformité RGPD & Anonymisation</h4>
+                <p style="font-size: 0.9rem; color: #ccc; line-height: 1.6;">
+                    L'exploitation des données suit une logique stricte de "Privacy-by-Design".
+                </p>
+                <ul style="font-size: 0.9rem; color: #ccc; margin-left: 1rem; margin-top: 0.5rem;">
+                    <li><strong>Pas de stockage :</strong> Les données sont analysées instantanément et aussitôt oubliées.</li>
+                    <li><strong>Agrégation immédiate :</strong> utilisation d'un compteur anonyme (+1) au lieu d'identifier le propriétaire.</li>
+                    <li><strong>Base Légale :</strong> Justification par l'Intérêt Légitime (optimisation du service).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 4rem; color: white; text-align: center;"><i class="fas fa-table"></i> Tableau de Synthèse : De la Donnée Brute à l'Action Réseau</h3>
+    <div style="overflow-x: auto; background: white; border-radius: 12px; box-shadow: var(--shadow-lg); margin-top: 2rem;" data-aos="fade-up">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.8rem; min-width: 800px;">
             <thead>
-                <tr style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white;">
-                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Source</th>
-                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Type</th>
-                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Exemple Brut</th>
-                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Extraction IA</th>
-                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Information Structurée</th>
-                    <th style="padding: 1rem; text-align: left; border: 1px solid rgba(255,255,255,0.1);">Action Réseau</th>
+                <tr style="background: linear-gradient(135deg, #1e293b, #0f172a); color: white;">
+                    <th style="padding: 1rem; text-align: left;">Source OSINT</th>
+                    <th style="padding: 1rem; text-align: left;">Exemple de Donnée Brute</th>
+                    <th style="padding: 1rem; text-align: left;">Technologie d'Extraction (IA)</th>
+                    <th style="padding: 1rem; text-align: left;">Information Structurée (Sortie)</th>
+                    <th style="padding: 1rem; text-align: left;">Modèle de Fusion (GNN)</th>
+                    <th style="padding: 1rem; text-align: left; background: var(--secondary-color);">Action Réseau Concrète</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr style="background: rgba(99, 102, 241, 0.05);">
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Réseaux Sociaux</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">OSINT Dynamique</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-style: italic;">"Gros concert de 'Artiste X' à l'Arena Y ce soir!"</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">NLP (NER) + Validation</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.8rem;">Event(Type: Concert, Location: [Lat,Lon], Time: 20h-23h, Magnitude: 15k)</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: var(--primary-dark); font-weight: 600;">Pré-allocation Network Slice ; Activation cellules</td>
+            <tbody style="color: #333;">
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 1rem; font-weight: 600; color: var(--primary-color);">Réseaux Sociaux<br><span style="font-size:0.7em; color:#666;">(Dynamique)</span></td>
+                    <td style="padding: 1rem; font-style: italic;">"Concert géant de l'artiste X à l'Arena ce soir !"</td>
+                    <td style="padding: 1rem;">NLP (NER) + Validation Croisée</td>
+                    <td style="padding: 1rem; font-family: monospace;">Event(Type:Concert, Loc:[Lat,Lon], Time:20h, Pax:15k)</td>
+                    <td style="padding: 1rem;">Intégration d'un pic de demande temporaire au nœud Z</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Pré-allocation de Network Slices (QoS) & Réveil proactif de cellules</td>
                 </tr>
-                <tr>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">INSEE</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">OSINT Statique/Mobilité</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Fichiers densité population</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Analyse Géo-Statistique</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.8rem;">PopulationDensity(Zone, Time) = X</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: var(--primary-dark); font-weight: 600;">Dimensionnement long terme ; Baseline optimisation énergétique</td>
+                <tr style="border-bottom: 1px solid #eee; background-color: #f8f9fa;">
+                    <td style="padding: 1rem; font-weight: 600; color: var(--primary-color);">INSEE / Démographie<br><span style="font-size:0.7em; color:#666;">(Statique/Mobilité)</span></td>
+                    <td style="padding: 1rem;">Fichiers CSV densité population & Flux pendulaires</td>
+                    <td style="padding: 1rem;">Analyse Géo-Statistique</td>
+                    <td style="padding: 1rem; font-family: monospace;">PopDensity(Zone:[Hash], Time:Day/Night) = X</td>
+                    <td style="padding: 1rem;">Définition de la baseline de charge du nœud</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Dimensionnement long terme & Optimisation énergétique (Deep Sleep)</td>
                 </tr>
-                <tr style="background: rgba(99, 102, 241, 0.05);">
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">Météo</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">OSINT Dynamique</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Prévision "Pluie forte"</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Analyse Spatio-Temporelle</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.8rem;">Precipitation(Zone, Time: T+2h, Type: Rain)</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: var(--primary-dark); font-weight: 600;">Augmentation capacité résidentielle ; Reroutage backhaul satellite</td>
+                <tr style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 1rem; font-weight: 600; color: var(--primary-color);">Météo Avancée<br><span style="font-size:0.7em; color:#666;">(Dynamique)</span></td>
+                    <td style="padding: 1rem;">Prévision "Orage Violent / Pluie dense"</td>
+                    <td style="padding: 1rem;">Modèles IA (GraphCast/Aurora)</td>
+                    <td style="padding: 1rem; font-family: monospace;">Precipitation(Zone, T+2h) -> RainFadeRisk:High</td>
+                    <td style="padding: 1rem;">Anticipation baisse mobilité & hausse trafic streaming</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Reroutage préventif du backhaul (Sat -> Fibre) & Augmentation capacité résidentielle</td>
                 </tr>
-                <tr>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">ANFR</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">OSINT Statique</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Localisation antennes (2G/3G/4G/5G)</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Import base de données</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.8rem;">Node(ID, Location, Tech)</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: var(--text-light);">Entrée statique du modèle</td>
-                </tr>
-                <tr style="background: rgba(99, 102, 241, 0.05);">
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-weight: 600;">OpenStreetMap</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">OSINT Statique</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Données vectorielles bâtiments, routes</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color);">Analyse GeoAI</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); font-family: monospace; font-size: 0.8rem;">Topology(Zone, BuildingHeight, Canyon_Effect)</td>
-                    <td style="padding: 1rem; border: 1px solid var(--border-color); color: var(--primary-dark); font-weight: 600;">Prédiction couverture fine ; Optimisation beamforming</td>
+                <tr style="border-bottom: 1px solid #eee; background-color: #f8f9fa;">
+                    <td style="padding: 1rem; font-weight: 600; color: var(--primary-color);">OpenStreetMap (OSM)<br><span style="font-size:0.7em; color:#666;">(Statique)</span></td>
+                    <td style="padding: 1rem;">Vecteurs bâtiments 3D, matériaux, voirie</td>
+                    <td style="padding: 1rem;">GeoAI / Computer Vision</td>
+                    <td style="padding: 1rem; font-family: monospace;">Topology(Height:X, CanyonEffect:Y)</td>
+                    <td style="padding: 1rem;">Modélisation fine de la propagation radio (Pathloss)</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Optimisation du Beamforming (orientation faisceaux) & Couverture</td>
                 </tr>
             </tbody>
         </table>
