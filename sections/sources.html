@@ -3,12 +3,12 @@
     
     <div style="background: linear-gradient(to right, rgba(255,255,255,0.05), transparent); padding: 1.5rem; border-left: 4px solid var(--primary-color); border-radius: 8px; margin-bottom: 2rem;">
         <p class="section-intro" style="margin: 0;">
-            L'architecture dépasse les systèmes SON (Self-Organizing Networks) réactifs actuels en intégrant un moteur d'analyse prédictif. Le système ingère et normalise des flux hétérogènes pour alimenter des Réseaux de Neurones Graphiques (GNNs). L'objectif est de transformer des données non structurées (textes, images, météo) en directives d'orchestration réseau précises (allocation de Network Slices, gestion des faisceaux).
+            L'architecture dépasse les systèmes réactifs SON (Self-Organizing Networks) actuels en intégrant un moteur d'analyse prédictif. Le système ingère et normalise des flux hétérogènes, dans le but d'alimenter des Réseaux de Neurones Graphiques (GNNs). L'objectif est de transformer des données non structurées (textes, images, météo) en directives d'orchestration réseau précises (allocation de Network Slices, gestion des faisceaux...).
         </p>
     </div>
 
     <h3 style="margin-top: 2rem; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
-        <i class="fas fa-database"></i> 1. Données Structurelles (Le "Squelette" du Graphe)
+        <i class="fas fa-database"></i> 1. Données Structurelles 
     </h3>
     <div class="card-grid">
         <div class="card" data-aos="fade-up" data-aos-delay="0">
@@ -28,7 +28,7 @@
     </div>
 
     <h3 style="margin-top: 3rem; color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
-        <i class="fas fa-bolt"></i> 2. Données Dynamiques (Le "Flux" du Trafic)
+        <i class="fas fa-bolt"></i> 2. Données Dynamiques 
     </h3>
     <div class="card-grid">
         <div class="card" data-aos="fade-up" data-aos-delay="200">
@@ -43,7 +43,7 @@
             <span class="card-icon">📢</span>
             <h3>Réseaux Sociaux & Événementiel (NLP)</h3>
             <p>
-                Détection précoce d'événements (concerts, rassemblements) via l'analyse sémantique (NLP). L'IA extrait les données (Lieu, Date, Heure...) pour anticiper les pics de charge inhabituelles que les modèles classiques n'arrivent pas à prévoir.
+                Détection d'événements (concerts, rassemblements) via l'analyse sémantique (NLP). L'IA extrait les données (Lieu, Date, Heure...) pour anticiper les pics de charge inhabituelles que les modèles classiques n'arrivent pas à prévoir.
             </p>
         </div>
 
@@ -51,7 +51,7 @@
             <span class="card-icon">🌧️</span>
             <h3>Météo de Précision & "Rain Fade"</h3>
             <p>
-                Des modèles d'IA de fondation sont utilisés (ex: GraphCast, PanguWeather) pour prédire l'atténuation du signal (Rain Fade) sur les bandes Ku/Ka. C'est un élément crucial pour le reroutage préventif des backhauls satellites ou encore des faisceaux hertziens avant que le service se dégrade.
+                Des modèles d'IA de fondation sont utilisés (GraphCast, PanguWeather) pour prédire l'atténuation du signal (Rain Fade) sur les bandes Ku/Ka. C'est un élément crucial pour le reroutage préventif des backhauls satellites ou encore des faisceaux hertziens avant que le service se dégrade.
             </p>
         </div>
 
@@ -114,7 +114,7 @@
                     <td style="padding: 1rem;">NLP (NER) + Validation Croisée</td>
                     <td style="padding: 1rem; font-family: monospace;">Event(Type:Concert, Loc:[Lat,Lon], Time:20h, Pax:15k)</td>
                     <td style="padding: 1rem;">Intégration d'un pic de demande temporaire au nœud Z</td>
-                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Pré-allocation de Network Slices (QoS) & Réveil proactif de cellules</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Pré-allocation de Network Slices (QoS) et Réveil proactif de cellules</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #eee; background-color: #f8f9fa;">
                     <td style="padding: 1rem; font-weight: 600; color: var(--primary-color);">INSEE / Démographie<br><span style="font-size:0.7em; color:#666;">(Statique/Mobilité)</span></td>
@@ -122,7 +122,7 @@
                     <td style="padding: 1rem;">Analyse Géo-Statistique</td>
                     <td style="padding: 1rem; font-family: monospace;">PopDensity(Zone:[Hash], Time:Day/Night) = X</td>
                     <td style="padding: 1rem;">Définition de la baseline de charge du nœud</td>
-                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Dimensionnement long terme & Optimisation énergétique (Deep Sleep)</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Dimensionnement long terme et Optimisation énergétique (Deep Sleep)</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #eee;">
                     <td style="padding: 1rem; font-weight: 600; color: var(--primary-color);">Météo Avancée<br><span style="font-size:0.7em; color:#666;">(Dynamique)</span></td>
@@ -130,7 +130,7 @@
                     <td style="padding: 1rem;">Modèles IA (GraphCast/Aurora)</td>
                     <td style="padding: 1rem; font-family: monospace;">Precipitation(Zone, T+2h) -> RainFadeRisk:High</td>
                     <td style="padding: 1rem;">Anticipation baisse mobilité & hausse trafic streaming</td>
-                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Reroutage préventif du backhaul (Sat -> Fibre) & Augmentation capacité résidentielle</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Reroutage préventif du backhaul (Sat -> Fibre) et Augmentation capacité résidentielle</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #eee; background-color: #f8f9fa;">
                     <td style="padding: 1rem; font-weight: 600; color: var(--primary-color);">OpenStreetMap (OSM)<br><span style="font-size:0.7em; color:#666;">(Statique)</span></td>
@@ -138,7 +138,7 @@
                     <td style="padding: 1rem;">GeoAI / Computer Vision</td>
                     <td style="padding: 1rem; font-family: monospace;">Topology(Height:X, CanyonEffect:Y)</td>
                     <td style="padding: 1rem;">Modélisation fine de la propagation radio (Pathloss)</td>
-                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Optimisation du Beamforming (orientation faisceaux) & Couverture</td>
+                    <td style="padding: 1rem; background: rgba(99, 102, 241, 0.05); font-weight: 600;">Optimisation du Beamforming (orientation faisceaux) et Couverture</td>
                 </tr>
             </tbody>
         </table>
