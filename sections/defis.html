@@ -1,7 +1,7 @@
 <section id="defis" class="tab-content">
     <h2><i class="fas fa-shield-alt"></i> Obstacles Critiques : Véracité & RGPD</h2>
     <p class="section-intro">
-        Le déploiement de cette nouvelle façon de traiter l'OSINT se heurte à quatre obstacles majeurs dont trois inhérents à l'OSINT : la quantité de données gratuite accessibles, la véracité des données, la confidentialité de celles-ci, et le coût de l'IA. Ces défis ne sont pas insurmontables mais critique dans la précision et la rentabilité de la chose.
+        Le déploiement de cette nouvelle façon de traiter l'OSINT via l'IA se heurte à trois obstacles majeurs dont deux inhérents à l'OSINT : la véracité des données, la confidentialité de celles-ci, et le coût de l'IA. Ces défis ne sont pas insurmontables mais critique dans la précision et la rentabilité de la chose.
     </p>
     <div class="challenge-grid">
         
@@ -23,38 +23,50 @@
             </ol>
             <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 10px; margin-top: 1rem;">
                 <p style="color: var(--text-dark); font-size: 0.9rem;">
-                    🎯 <strong>Système de confiance :</strong> INSEE = 1.0, Tweet anonyme = 0.1 (jusqu'à corroboration)
+                    🎯 <strong>Indice de confiance :</strong> INSEE = 10.0, Tweet anonyme = 0.1 par exemple
                 </p>
             </div>
         </div>
 
         <div class="challenge-card danger" data-aos="flip-right">
-            <h3><i class="fas fa-user-shield"></i> Limite 2 (Juridique) : RGPD & Confidentialité</h3>
+            <h3><i class="fas fa-user-shield"></i> Limite 2: RGPD & Confidentialité</h3>
             <p style="margin-top: 1rem; color: var(--text-light);">
-                <strong>"Show-stopper" potentiel.</strong> L'analyse de posts publics sur réseaux sociaux constitue un traitement de données à caractère personnel et tombe sous le coup du RGPD.
+                <strong>Dangers potentiel.</strong> L'analyse de posts publics sur réseaux sociaux constitue un traitement de données à caractère personnel et tombe sous le coup du RGPD, ce qui peut entraîner des sanctions lourdes.
             </p>
             <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Fausse Piste :</p>
-            <p style="color: var(--text-light);">Le consentement explicite (Art. 6.1(a)) de millions d'utilisateurs est <strong>opérationnellement impossible</strong>.</p>
+            <p style="color: var(--text-light);">Le consentement explicite de millions d'utilisateurs est opérationnellement impossible car bien trop lourd à mettre en place et à contrôler</p>
             
             <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Seule Voie Viable :</p>
-            <p style="color: var(--text-light);"><strong>Intérêt Légitime (Art. 6.1(f))</strong> : Optimiser le réseau pour garantir QoS et efficacité énergétique (bénéfice client).</p>
+            <p style="color: var(--text-light);">Intérêt Légitime : Ainsi pour répondre à la RGPD, il faut que l’organisme traitant les données ne créent pas de déséquilibre au détriment des droits et intérêts des personnes dont les données sont traitées, ce qui est le cas, étant donné le but d'économie et d'amélioration du réseau engendré</p>
             
-            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Solution (Privacy-by-Design) :</p>
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Solutions envisagées :</p>
             <ul style="color: var(--text-light); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
-                <li><strong>Anonymisation totale et irréversible</strong> (pas de pseudonymisation)</li>
-                <li><strong>3 Critères CNIL/G29 :</strong>
+                <li><strong>Anonymisation des sources</strong></li>
+                <li><strong>3 Critères CNIL / Comité européen de la protection des données  :</strong>
                     <ul style="margin-left: 1rem; margin-top: 0.5rem;">
                         <li>✓ Non-individualisation (impossible d'isoler un individu)</li>
                         <li>✓ Non-corrélation (impossible de relier des datasets)</li>
                         <li>✓ Non-inférence (impossible de déduire de nouvelles infos)</li>
                     </ul>
                 </li>
-                <li><strong>Architecture :</strong> IA ingère en mémoire volatile, extrait signal agrégé, détruit immédiatement la source</li>
+                <li><strong>Architecture :</strong> L'IA ingère l'information en mémoire volatile, extrait le signal agrégé et détruit immédiatement la source</li>
             </ul>
         </div>
-
     </div>
 
+    <div class="challenge-card info" data-aos="flip-up">
+            <h3><i class="fas fa-coins"></i> Limite 3 : Coût de l'IA</h3>
+            <p style="margin-top: 1rem; color: var(--text-light);">
+                L'utilisation de modèles IA avancés (LLM, ...) pour l'analyse OSINT en temps réel peut engendrer des coûts de calcul et d'infrastructure significatifs
+            </p>
+            <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Solutions possibles :</p>
+            <ul style="color: var(--text-light); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
+                <li><strong>Optimisation des Modèles :</strong> Utilisation de versions allégées ou quantifiées des modèles IA pour réduire les besoins en ressources</li>
+                <li><strong>Traitement par Lots :</strong> Agrégation des données OSINT et traitement en lots à intervalles réguliers plutôt qu'en continu</li>
+                <li><strong>Surveillance des Coûts :</strong> Mise en place d'outils de suivi pour optimiser l'utilisation des ressources IA en fonction du budget</li>
+            </ul>
+        </div>
+    
     <h3 style="margin-top: 3rem; color: white; text-align: center;"><i class="fas fa-gavel"></i> Matrice de Conformité RGPD</h3>
     <div style="overflow-x: auto; margin-top: 2rem; background: white; border-radius: 15px; padding: 2rem; box-shadow: var(--shadow-lg);" data-aos="fade-up">
         <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">
