@@ -1,25 +1,26 @@
 <section id="defis" class="tab-content">
-    <h2><i class="fas fa-shield-alt"></i> Obstacles Critiques : Véracité & RGPD</h2>
+    <h2><i class="fas fa-shield-alt"></i> Obstacles Critiques : Véracité des données et Règlement Général sur la Protection des Données (RGPD)</h2>
     <p class="section-intro">
-        Le déploiement de cette nouvelle façon de traiter l'OSINT via l'IA se heurte à trois obstacles majeurs dont deux inhérents à l'OSINT : l'authenticité des données, la confidentialité de celles-ci, et le coût de l'IA. Ces défis ne sont pas insurmontables mais critique dans la précision et la rentabilité de la chose.
+        Malgré les avantages qu'entraine le traitement de l'OSINT via l'IA, ce dernier se heurte néanmoins à trois obstacles majeurs dont deux inhérents à l'OSINT : l'authenticité des données, la confidentialité de celles-ci, et le coût de l'IA. 
+        Ces défis ne sont pas bloquants mais restent critiques quant à la précision et la rentabilité de la chose
     </p>
     <div class="challenge-grid">
         
         <div class="challenge-card warning" data-aos="flip-left">
             <h3><i class="fas fa-exclamation-circle"></i> Première limite : Véracité des Données</h3>
             <p style="margin-top: 1rem; color: var(--text-light);">
-                L'OSINT, en particulier l'OSINT des réseaux sociaux est massivement "bruitée" et constitue le principal vecteur de désinformation (bots, infox, rumeurs)
+                L'OSINT, en particulier l'OSINT des réseaux sociaux est massivement "bruitée", est relativement peu fiable et constitue le principal vecteur de désinformation (bots, infox, rumeurs)
             </p>
             <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Problématique :</p>
-            <p style="color: var(--text-light);">Un modèle IA naïf ou de l'analyse OSINT via des algorithmes pourrait sur-allouer des ressources pour un évènement fictif ou manquer un événement réel masqué par le bruit</p>
+            <p style="color: var(--text-light);">Un modèle IA non spécialisé ou de l'analyse OSINT via des algorithmes pourrait allouer des ressources pour un évènement fictif ou manquer un événement réel masqué par le bruit</p>
             
             <p style="margin-top: 1.5rem; font-weight: 600; color: var(--text-dark);">Solution par IA possible :</p>
             <ol style="color: var(--text-light); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
-                Chacun de ces modules IA travaille en parallèle pour filtrer et valider les données OSINT brutes :
+                Une solution est possible en associant plusieurs modules d'IA, afin qu'elles travaillent en parallèle pour filtrer et valider les données OSINT obtenues. Voici des exemples d'IA pouvant être utilisés dans ce cadre là :
                 <li><strong>IA de Détection (NLP) :</strong> Scanne et identifie les événements potentiels</li>
-                <li><strong>IA de Corrélation :</strong> Recherche de confirmations (presse, agendas, comptes vérifiés, agents de confiance)</li>
+                <li><strong>IA de Corrélation :</strong> Recherche de confirmations des évènements ou des changements (presse, agendas, comptes vérifiés, agents de confiance)</li>
                 <li><strong>IA d'Analyse Sentiment :</strong> Essaye de prédire l'ampleur de l'évènement</li>
-                <li><strong>IA de Détection Fraude :</strong> Détecte les comptes frauduleux, les bots et les deepfakes</li>
+                <li><strong>IA de Détection Fraude :</strong> Cherche à détecter les comptes peu fiables, les bots et les usurpateurs d'identités</li>
             </ol>
             <div style="background: rgba(245, 158, 11, 0.1); padding: 1rem; border-radius: 10px; margin-top: 1rem;">
                 <p style="color: var(--text-dark); font-size: 0.9rem;">
@@ -44,9 +45,9 @@
                 <li><strong>Anonymisation des sources</strong></li>
                 <li><strong>3 Critères CNIL / Comité européen de la protection des données  :</strong>
                     <ul style="margin-left: 1rem; margin-top: 0.5rem;">
-                        <li>✓ Non-individualisation (impossible d'isoler un individu)</li>
-                        <li>✓ Non-corrélation (impossible de relier des datasets)</li>
-                        <li>✓ Non-inférence (impossible de déduire de nouvelles infos)</li>
+                        <li> Non-individualisation (impossible d'isoler un individu)</li>
+                        <li> Non-corrélation (impossible de relier des datasets)</li>
+                        <li> Non-inférence (impossible de déduire de nouvelles infos)</li>
                     </ul>
                 </li>
                 <li><strong>Architecture :</strong> L'IA ingère l'information en mémoire volatile, extrait le signal agrégé et détruit immédiatement la source</li>
